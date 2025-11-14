@@ -127,4 +127,4 @@ backend.delete("/delete", async (req, res) => {
     }
 });
 
-backend.listen(usingport, 1.1.1.1, () => { console.log("Backend running successfully") })
+backend.listen(usingport, () => { console.log("Backend running successfully") })
