@@ -27,17 +27,20 @@ const db = await initDB()
 
 async function insert(t, c) {
     console.log(`Adding name '${t}'`)
-    await db.run("INSERT INTO data (name,balance) VALUES (?,?)", [t, c])
+    await db.query(
+  "INSERT INTO data (name, balance) VALUES ($1, $2)",
+  [t, c]
+);
 }
 async function getall() {
-    const data = await db.all("SELECT * FROM data")
-    return data
+    const { rows } = await db.query("SELECT * FROM data");
+    return rows
 
 }
 async function remove(t) {
     if (t != 1) {
         console.log(`Removing id: ${t}`)
-        await db.run("DELETE FROM data WHERE id = ?", [t])
+        await db.query("DELETE FROM data WHERE id = ?1", [t])
     }
 }
 async function modify(id, a) {
@@ -45,7 +48,7 @@ async function modify(id, a) {
         console.log(`Modifying id: ${id} by ${a}`)
         const origbalance = await db.get("SELECT balance FROM data WHERE id=?", [id])
         const updatedbalance = await origbalance.balance + a;
-        await db.run("UPDATE data SET balance = ? WHERE id=?", [updatedbalance, id])
+        await db.query("UPDATE data SET balance = ?1 WHERE id=?2", [updatedbalance, id])
     }
 }
 //testing things out.
