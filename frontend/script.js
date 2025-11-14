@@ -9,7 +9,7 @@ if (new Date().getMonth() == 3 && new Date().getDate() == 1) {
    showBillGates = "True"
 } else { showBillGates = "False" }
 const server = "https://hebcanteentabs.onrender.com"
-const port = 5500
+const port = ''
 var pword = ""
 
 try {
