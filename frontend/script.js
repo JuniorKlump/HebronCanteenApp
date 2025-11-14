@@ -9,6 +9,7 @@ if (new Date().getMonth() == 3 && new Date().getDate() == 1) {
    showBillGates = "True"
 } else { showBillGates = "False" }
 const server = "https://hebcanteentabs.onrender.com"
+const port = 5500
 var pword = ""
 
 try {
@@ -225,6 +226,7 @@ function addto(amnt) {
     }
     const updated = balance + credit
     document.getElementById("updated-balance").textContent = `New Balance: ${updated}`
+    document.getElementById("credit").textContent = `Amount: ${credit}`
     initbuttons()
 }
 
