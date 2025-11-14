@@ -9,7 +9,6 @@ if (new Date().getMonth() == 3 && new Date().getDate() == 1) {
    showBillGates = "True"
 } else { showBillGates = "False" }
 const server = "https://hebcanteentabs.onrender.com"
-const port = ''
 var pword = ""
 
 try {
@@ -42,7 +41,7 @@ function login() {
 }
 async function getTabs() {
     try {
-        const data = await fetch(`${server}:${port}/get?p=${hash(pword)}`)
+        const data = await fetch(`${server}/get?p=${hash(pword)}`)
         if (data.status == 401 && pword != "") {
             document.getElementById("tablist").textContent = `Incorrect password. \n(If you've forgotten the password, click F12.)`
             console.log(`Send an email to jr.klump@proton.me to get the password to the app.`)
@@ -102,7 +101,7 @@ async function getTabs() {
 
 async function updatetab(bg="False") {
     ;
-    await fetch(`${server}:${port}/modify`, {
+    await fetch(`${server}/modify`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -120,7 +119,7 @@ async function deletetab() {
     const id = editing
     if (id == 1){showBillGates = 'false';hide("1");}
     if (document.getElementById(`${id}`).dataset.balance >= 0) {
-        await fetch(`${server}:${port}/delete`, {
+        await fetch(`${server}/delete`, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ id })
@@ -156,7 +155,7 @@ async function deletetab() {
 
 async function addtab() {
     const text = upper(document.getElementById("name-input").value);
-    await fetch(`${server}:${port}/add`, {
+    await fetch(`${server}/add`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text })
