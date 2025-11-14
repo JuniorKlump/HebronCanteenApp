@@ -8,7 +8,7 @@ const cap = -2000
 if (new Date().getMonth() == 3 && new Date().getDate() == 1) {
    showBillGates = "True"
 } else { showBillGates = "False" }
-const server = "http://presto.local"
+const server = "https://hebcanteentabs.onrender.com/"
 const port = 5500
 var pword = ""
 
