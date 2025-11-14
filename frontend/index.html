@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend</title>
+    <link rel="stylesheet" href="style.css?=770">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!--Canteen app built and developed by Josiah Klumpenhouwer, with a little help from AI models Chatgpt 5 and Claude Sonnet 3.5-->
+    <!--Thanks to Canteen managers Ebenezer and Rachel for feedback.-->
+</head>
+
+<body>
+    <h1 id="header">Canteen Tabs</h1>
+    <div id="tablist">Loading...</div>
+    <div class="floating-box" id="edit-popup">
+        <div id="main-container">
+            <div id="buttons"></div>
+            <div id="text-container">
+                <h3 class="popup-text" id="edit-heading">Loading...</h3>
+                <h4 class="popup-text" id="balance">
+                    </h3>
+                    <h4 class="popup-text" id="updated-balance"></h4>
+            </div>
+        </div>
+        <div id="options-container">
+            <button class="options" id="delete" onclick="show('confirm-delete')">🗑️</button>
+            <button class="options" id="popup-dismiss" onclick="hide('edit-popup')">Cancel</button>
+            <button class="options" id="popup-confirm" onclick="updatetab()">Confirm</button>
+        </div>
+    </div>
+    <button id="addtab" onclick="show('name-popup')">+</button>
+    <div class="floating-box" id="name-popup">
+        <h4>Enter new tab name</h4>
+        <input id="name-input" placeholder="eg. John Smith">
+        <button id="tab-adder" onclick="addtab()">Add</button>
+    </div>
+    <div class="floating-box" id="confirm-delete">
+        <h4>Confirm delete?</h4>
+        <div style="display:flex;">
+            <button onclick="deletetab()">Yes</button>
+            <button onclick="hide('confirm-delete')">No</button>
+        </div>
+    </div>
+    <div class="floating-box" id="loginbox">
+        <h4>Enter password:</h4><input id="password" type="password"><button id="submit-password"
+            onclick="login()">Login</button>
+    </div>
+    <script src="script.js?=700"></script>
+</body>
+
+</html>
