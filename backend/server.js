@@ -62,7 +62,7 @@ backend.use(cors())
 backend.use(express.json());
 backend.use(express.urlencoded({ extended: true }));
 
-const usingport = 5500
+const usingport = process.env.PORT || 5500;
 backend.use(express.static(path.join(__dirname,"../frontend")))
 
 backend.get("/get", async (req, res) => {
