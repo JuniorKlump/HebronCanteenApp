@@ -63,6 +63,7 @@ backend.use(express.json());
 backend.use(express.urlencoded({ extended: true }));
 
 const usingport = process.env.PORT || 5500;
+console.log(usingport)
 backend.use(express.static(path.join(__dirname,"../frontend")))
 
 backend.get("/get", async (req, res) => {
