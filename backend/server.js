@@ -40,15 +40,15 @@ async function getall() {
 async function remove(t) {
     if (t != 1) {
         console.log(`Removing id: ${t}`)
-        await db.query("DELETE FROM data WHERE id = ?1", [t])
+        await db.query("DELETE FROM data WHERE id = $1", [t])
     }
 }
 async function modify(id, a) {
     if (id != 1) {
         console.log(`Modifying id: ${id} by ${a}`)
-        const origbalance = await db.query("SELECT balance FROM data WHERE id=?1", [id])
+        const origbalance = await db.query("SELECT balance FROM data WHERE id=$1", [id])
         const updatedbalance = await origbalance.balance + a;
-        await db.query("UPDATE data SET balance = ?1 WHERE id=?2", [updatedbalance, id])
+        await db.query("UPDATE data SET balance = $1 WHERE id=$2", [updatedbalance, id])
     }
 }
 //testing things out.
