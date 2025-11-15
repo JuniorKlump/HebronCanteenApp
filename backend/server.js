@@ -47,7 +47,7 @@ async function modify(id, a) {
     if (id != 1) {
         console.log(`Modifying id: ${id} by ${a}`)
         const { rows } = await db.query("SELECT balance FROM data WHERE id=$1", [id])
-        const origbalance = rows[0].balance
+        const origbalance = parseInt(rows[0].balance)
         console.log(origbalance)
         const updatedbalance = await origbalance + a;
         await db.query("UPDATE data SET balance = $1 WHERE id=$2", [updatedbalance, id])
