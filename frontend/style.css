@@ -87,6 +87,7 @@ h1{
     font-family:'Garamond';
     font-size:50px;
     user-select:none;
+    color: rgb(58, 58, 58);
 }
 #loginbox{
     display:block;
