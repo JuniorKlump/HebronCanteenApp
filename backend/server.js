@@ -4,7 +4,7 @@ import {fileURLToPath } from 'url';
 import path from 'path';
 import { initDB } from "./dbprocessor.js"
 
-const pHash = hash("Neetnac")
+const pHash = '-2a92daab'
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 console.log(__dirname)
