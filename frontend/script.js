@@ -85,7 +85,7 @@ async function getTabs() {
                 } else {
                     newitem.textContent = tab.name + ": " + tab.balance;
                 }
-                tablist.appendChild(newitem)
+                tablist.prepend(newitem)
             });
             if(showBillGates != "true"){
             hide("1")}
