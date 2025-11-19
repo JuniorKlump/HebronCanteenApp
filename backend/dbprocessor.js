@@ -18,6 +18,13 @@ export async function initDB() {
     console.log("Flushing database…");
 
     await pool.query(`DROP TABLE IF EXISTS data`);
+    await pool.query(`DROP TABLE IF EXISTS tHistory`);
+    await pool.query(`CREATE TABLE tHistory (
+      uid INTEGER, 
+      timestamp TEXT, 
+      change INTEGER
+      )
+      `);
 
     await pool.query(`
       CREATE TABLE data (
