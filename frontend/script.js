@@ -8,7 +8,7 @@ const cap = -2000
 if (new Date().getMonth() == 3 && new Date().getDate() == 1) {
    showBillGates = "True"
 } else { showBillGates = "False" }
-const server = "https://hebcanteentabs.onrender.com"
+const server = "http://presto.local:5500"
 const port = 5500
 var pword = ""
 
@@ -37,7 +37,6 @@ function login() {
     const pwordvalue = document.getElementById('password').value;
     pword = pwordvalue;
     document.cookie = `pw=${pword}`
-    console.log(`Trying password ${pword}`)
 
 }
 async function getTabs() {
@@ -85,7 +84,7 @@ async function getTabs() {
                 } else {
                     newitem.textContent = tab.name + ": " + tab.balance;
                 }
-                tablist.prepend(newitem)
+                tablist.appendChild(newitem)
             });
             if(showBillGates != "true"){
             hide("1")}
@@ -99,7 +98,18 @@ async function getTabs() {
         }
     }
 }
-
+async function gethistory(id){
+    const raw = await fetch(`${server}/gethistory?id=${id}`)
+    const list = await raw.json() || ""
+    const display = document.getElementById('history-list')
+    display.innerHTML = ""
+    list.forEach(item => {
+        const line = document.createElement('p')
+        line.innerHTML= `Time: ${item.timestamp}<br>Change: ${item.change} `
+        display.appendChild(line)
+    })
+    show('history-popup')
+}
 async function updatetab(bg="False") {
     ;
     await fetch(`${server}/modify`, {
@@ -168,6 +178,7 @@ async function addtab() {
 
 
 function initbuttons() {
+    
     document.getElementById("buttons").innerHTML = ""
     money.forEach(amnt => {
         const container = document.getElementById("buttons");
@@ -210,6 +221,7 @@ function show(id) {
 function edittab(id) {
     show("edit-popup");
     editing = id;
+    document.getElementById('show-history').onclick=() => gethistory(editing)
     initbuttons();
     credit = 0;
     ebutton = document.getElementById(`${id}`)
