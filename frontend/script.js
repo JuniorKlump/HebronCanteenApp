@@ -110,7 +110,9 @@ async function gethistory(id){
     show('history-popup')
 }
 async function updatetab(bg="False") {
-    ;
+    if(bg !="True"){
+    hide("edit-popup")}
+   }
     await fetch(`${server}/modify`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -122,9 +124,7 @@ async function updatetab(bg="False") {
     editing = 0
     credit = 0
     getTabs()
-    if(bg !="True"){
-    hide("edit-popup")}
-}
+    
 async function deletetab() {
     const id = editing
     if (id == 1){showBillGates = 'false';hide("1");}
