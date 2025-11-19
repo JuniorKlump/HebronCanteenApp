@@ -52,7 +52,7 @@ async function modify(id, a) {
         const updatedbalance = await origbalance + a;
         await db.query("UPDATE data SET balance = $1 WHERE id=$2", [updatedbalance, id])
         const curdate = new Date
-        const timestamp = `${curdate.getDay()}/${curdate.getMonth()}/${curdate.getFullYear()} ${curdate.getHours()+5}:${curdate.getMinutes()}:${curdate.getSeconds()}`
+        const timestamp = `${curdate.getDay()}/${curdate.getMonth()}/${curdate.getFullYear()} ${curdate.getHours()+6}:${curdate.getMinutes()}:${curdate.getSeconds()}`
         await db.query("INSERT INTO tHISTORY VALUES ($1,$2,$3)",[id,timestamp,a])
     }
 }
