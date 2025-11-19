@@ -51,7 +51,14 @@ async function modify(id, a) {
         console.log(origbalance)
         const updatedbalance = await origbalance + a;
         await db.query("UPDATE data SET balance = $1 WHERE id=$2", [updatedbalance, id])
+        const curdate = new Date
+        const timestamp = `${curdate.getDay()}/${curdate.getMonth()}/${curdate.getFullYear()} ${curdate.getSeconds()}:${curdate.getMinutes()}:${curdate.getHours()}`
+        await db.query("INSERT INTO tHISTORY VALUES ($1,$2,$3)",[id,timestamp,a])
     }
+}
+async function getTransactionHistory(id){
+    const hist = await db.query("SELECT * FROM tHistory WHERE uid= $1 ORDER BY timestamp ASC",[id])
+    return hist
 }
 //testing things out.
 // modify(4,-108)
@@ -85,7 +92,14 @@ backend.get("/get", async (req, res) => {
         res.sendStatus(401)
     }
 })
-
+backend.get("/gethistory", async (req, res) => {
+    const toretrieve = req.query.id;
+    console.log(`Getting history of id ${toretrieve}`)
+    const history = await getTransactionHistory(toretrieve)
+    console.log(history)
+    res.json(history)
+    
+})
 backend.post("/add", async (req, res) => {
     const { text } = req.body || {};
     if (!text) {
