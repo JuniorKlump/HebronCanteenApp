@@ -41,6 +41,7 @@ async function remove(t) {
     if (t != 1) {
         console.log(`Removing id: ${t}`)
         await db.query("DELETE FROM data WHERE id = $1", [t])
+        await db.query("DELETE FROM data WHERE uid = $1",[t])
     }
 }
 async function modify(id, a) {
