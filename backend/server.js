@@ -57,8 +57,8 @@ async function modify(id, a) {
     }
 }
 async function getTransactionHistory(id){
-    const hist = await db.query("SELECT * FROM tHistory WHERE uid= $1 ORDER BY timestamp ASC",[id])
-    return hist
+    const { rows } = await db.query("SELECT * FROM tHistory WHERE uid= $1 ORDER BY timestamp ASC",[id])
+    return rows
 }
 //testing things out.
 // modify(4,-108)
