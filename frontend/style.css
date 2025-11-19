@@ -87,8 +87,10 @@ h1{
     font-family:'Garamond';
     font-size:50px;
     user-select:none;
-    color: rgb(98, 98, 98);
-    -webkit-text-stroke: 4px rgb(58,58,58)
+    -webkit-text-stroke: 2px white;
+}
+p{
+    color:white;
 }
 #loginbox{
     display:block;
@@ -108,4 +110,9 @@ h1{
 }
 #select{
     user-select:all;
+}
+#history-list{
+    height:200px;
+    width:200px;
+    overflow:auto;
 }
