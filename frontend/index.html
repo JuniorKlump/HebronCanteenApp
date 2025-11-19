@@ -20,9 +20,10 @@
             <div id="text-container">
                 <h2 class="popup-text" id="edit-heading">Loading...</h2>
                 <h3 class="popup-text" id="balance">
-                    </h3>
-                    <h3 class="popup-text" id="credit"></h3>
-                    <h3 class="popup-text" id="updated-balance"></h3>
+                </h3>
+                <h3 class="popup-text" id="credit"></h3>
+                <h3 class="popup-text" id="updated-balance"></h3>
+                <button id="show-history">History</button>
             </div>
         </div>
         <div id="options-container">
@@ -47,6 +48,10 @@
     <div class="floating-box" id="loginbox">
         <h4>Enter password:</h4><input id="password" type="password"><button id="submit-password"
             onclick="login()">Login</button>
+    </div>
+    <div class="floating-box" id="history-popup">
+        <div id="history-list"></div>
+        <button onclick="hide('history-popup')">Close</button>
     </div>
     <script src="script.js?=700"></script>
 </body>
