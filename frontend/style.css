@@ -89,6 +89,7 @@ h1{
     user-select:none;
     color: darkgrey;
     -webkit-text-stroke: 4px rgb(58,58,58);
+    
 }
 p{
     color:white;
@@ -117,3 +118,10 @@ p{
     width:200px;
     overflow:auto;
 }
+#show-history{
+    transform: translateX(-50%);
+}
+/*#show-history:hover{
+    background-color:darkblue;
+    border:2px solid blue;
+}*/
