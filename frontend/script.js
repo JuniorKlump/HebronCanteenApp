@@ -155,7 +155,7 @@ function trydelete(){
     }
       
    }
-}
+
 
 async function deletetab() {
     const id = editing
