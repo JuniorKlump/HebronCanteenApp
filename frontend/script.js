@@ -125,22 +125,11 @@ async function updatetab(bg="False") {
     credit = 0
     getTabs()
 }
-    
-async function deletetab() {
-    const id = editing
-    if (id == 1){showBillGates = 'false';hide("1");}
-    if (document.getElementById(`${id}`).dataset.balance >= 0) {
-        await fetch(`${server}/delete`, {
-            method: "DELETE",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ id })
-        })
-        hide("edit-popup")
-        hide("confirm-delete")
-        getTabs();
-    } else {
-        //var popup = "" //Some weird looking stuff here. I'll see if this fixes it.
-        try {
+
+function trydelete(){
+   const id = editing
+   if (document.geElementById(`${id}`).dataset.balance < 0){
+      try {
             var popup = document.getElementById("alert")
             popup.textContent = ""
         }
@@ -161,8 +150,25 @@ async function deletetab() {
         dismiss.textContent = "Ok"
         popup.appendChild(dismiss)
         document.querySelector("body").appendChild(popup)
+    }else{
+      show("confirm-delete")
     }
-};
+      
+   }
+}
+
+async function deletetab() {
+    const id = editing
+    if (id == 1){showBillGates = 'false';hide("1");}
+        await fetch(`${server}/delete`, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ id })
+        })
+        hide("edit-popup")
+        hide("confirm-delete")
+        getTabs();
+    
 
 async function addtab() {
     const text = upper(document.getElementById("name-input").value);
