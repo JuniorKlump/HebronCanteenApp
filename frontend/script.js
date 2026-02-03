@@ -167,7 +167,7 @@ async function deletetab() {
         })
         hide("edit-popup")
         hide("confirm-delete")
-        getTabs();
+        getTabs();}
     
 
 async function addtab() {
