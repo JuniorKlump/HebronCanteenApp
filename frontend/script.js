@@ -250,7 +250,7 @@ function addto(amnt) {
 
 document.addEventListener('DOMContentLoaded', () => {
     getTabs();});
-document.getElementById('password').addEventListener('submit',l => {l.preventDefault();login();
+document.getElementById('passwordform').addEventListener('submit',l => {l.preventDefault();login();
 });
 var autoupdate = setInterval(getTabs, 3000);
 alert("Notice: \n You're using a free plan for your deployment of hebcanteentabs. \n This will expire, and delete data, on March 5, 2026, unless upgraded.")
