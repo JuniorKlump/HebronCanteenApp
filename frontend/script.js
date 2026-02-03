@@ -139,13 +139,13 @@ async function deletetab() {
         hide("confirm-delete")
         getTabs();
     } else {
-        var popup = ""
+        //var popup = "" //Some weird looking stuff here. I'll see if this fixes it.
         try {
-            popup = document.getElementById("alert")
+            var popup = document.getElementById("alert")
             popup.textContent = ""
         }
         catch (err) {
-            popup = document.createElement("div")
+            var popup = document.createElement("div")
         }
         popup.className = "floating-box"
         popup.id = "alert"
