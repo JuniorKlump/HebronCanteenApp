@@ -128,7 +128,7 @@ async function updatetab(bg="False") {
 
 function trydelete(){
    const id = editing
-   if (document.geElementById(`${id}`).dataset.balance < 0){
+   if (document.getElementById(`${id}`).dataset.balance < 0){
       try {
             var popup = document.getElementById("alert")
             popup.textContent = ""
