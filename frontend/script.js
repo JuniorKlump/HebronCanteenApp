@@ -246,4 +246,4 @@ document.addEventListener('DOMContentLoaded', () => {
     getTabs();
 });
 var autoupdate = setInterval(getTabs, 3000);
-alert("Notice: \n You're using a free plan for your deployment of hebcanteentabs. \n This will expire on February 8, 2026, unless upgraded.")
+alert("Notice: \n You're using a free plan for your deployment of hebcanteentabs. \n This will expire on March 5, 2026, unless upgraded.")
