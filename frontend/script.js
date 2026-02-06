@@ -264,7 +264,7 @@ function addto(amnt) {
     initbuttons()
 }
 function hideall(){
-   alert("hideall works")
+   //alert("hideall works")
    lst = document.querySelectorAll("floating-box")
    lst.forEach(box => {box.style.display = "none"})
 }
