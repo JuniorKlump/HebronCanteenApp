@@ -242,7 +242,7 @@ function edittab(id) {
       btn.textContent = "Ok"
       btn.onclick = () =>{
       show("edit-popup")
-      document.getElementById("tablock") = null
+      document.getElementById("tablock").remove()
    }
       lock.appendChild(textc)
       lock.appendChild(btn);
