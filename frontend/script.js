@@ -227,21 +227,23 @@ function show(id) {
     toggle.style.display = "block";
 }
 function edittab(id) {
+   show("edit-popup")
    const balance = parseInt(document.getElementById(`${id}`).dataset.balance)
    if(balance <= (cap + tolerance)){
-   const lock = document.createElement("div");
-   lock.className = "floating-box"
-   lock.id = "tablock"
-   lock.textContent = `This tab is locked. Please ensure that the balance is greater than ${cap+tolerance} to continue using it.`
-   const btn = document.createElement("button");
-   btn.textContent = "Ok"
-   btn.onClick = () =>{
+      hide("edit-tab")
+      const lock = document.createElement("div");
+      lock.className = "floating-box"
+      lock.id = "tablock"
+      lock.textContent = `This tab is locked. Please ensure that the balance is greater than ${cap+tolerance} to continue using it.`
+      const btn = document.createElement("button");
+      btn.textContent = "Ok"
+      btn.onClick = () =>{
+      show("edit-popup")
       document.getElementById("tablock") = null
    }
    lock.appendChild(btn);
    document.querySelector("body").appendChild(lock)}
    
-    show("edit-popup");
     editing = id;
     document.getElementById('show-history').onclick=() => gethistory(editing)
     initbuttons();
