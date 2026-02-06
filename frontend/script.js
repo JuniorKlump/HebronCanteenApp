@@ -244,7 +244,7 @@ function edittab(id) {
       show("edit-popup")
       document.getElementById("tablock") = null
    }
-      lock.appendchild(textc)
+      lock.appendChild(textc)
       lock.appendChild(btn);
       document.querySelector("body").appendChild(lock)}
       show("tablock")
