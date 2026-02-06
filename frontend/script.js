@@ -1,9 +1,10 @@
 var editing = 0;
 var credit = 0;
-var readonly = "False"
-var showBillGates = "False"
+var readonly = "False";
+var showBillGates = "False";
 const money = [1, 5, 10, 20, 50, 100, 200, 500];
-const cap = -2000
+const cap = -2200;
+const tolerance = 200;
 
 if (new Date().getMonth() == 3 && new Date().getDate() == 1) {
    showBillGates = "True"
@@ -78,7 +79,7 @@ async function getTabs() {
                 if (readonly == "False") {
                     newitem.onclick = () => edittab(tab.id)
                 }
-                if (tab.balance <= cap) {
+                if (tab.balance <= cap + tolerance) {
                     newitem.textContent = tab.name + ": " + tab.balance + "🔒";
                 } else {
                     newitem.textContent = tab.name + ": " + tab.balance;
@@ -225,6 +226,21 @@ function show(id) {
     toggle.style.display = "block";
 }
 function edittab(id) {
+   const balance = parseInt(document.getElementById(`${id}`).dataset.balance)
+   if(balance < (cap + tolerance){
+      const alert = document.createElement("div");
+   alert.class = "floating-box"
+   alert.id = "tablock"
+   alert.textContent = `This tab is locked. Please ensure that the balance is greater than ${cap+tolerance} to continue using it.`
+   const btn = document.createElement("button");
+   btn.textContent = "Ok"
+   btn.onClick = () =>{
+      hide("tablock")
+      edit
+   }
+   alert.appendChild(btn);
+   document.querySelector("body").appendChild(alert)}
+   
     show("edit-popup");
     editing = id;
     document.getElementById('show-history').onclick=() => gethistory(editing)
@@ -233,7 +249,7 @@ function edittab(id) {
     ebutton = document.getElementById(`${id}`)
     document.getElementById("edit-heading").textContent = `Editing tab: ${ebutton.dataset.name}`
     document.getElementById("balance").textContent = `Balance: ${ebutton.dataset.balance}`
-    addto(0)
+    addto(0);
 }
 function addto(amnt) {
     const toedit = document.getElementById(`${editing}`)
@@ -251,6 +267,8 @@ function addto(amnt) {
 document.addEventListener('DOMContentLoaded', () => {
     getTabs();});
 document.getElementById('passwordform').addEventListener('submit',l => {l.preventDefault();login();
+
+document.querySelector("body").adEventListener('click', () => {alert('body has been clicked on')})
 });
 var autoupdate = setInterval(getTabs, 3000);
 alert("Notice: \n You're using a free plan for your deployment of hebcanteentabs. \n This will expire, and delete data, on March 5, 2026, unless upgraded.")
