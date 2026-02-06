@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
     getTabs();});
 document.getElementById('passwordform').addEventListener('submit',l => {l.preventDefault();login();});
 document.getElementById('tabaddform').addEventListener('submit',l => {l.preventDefault();addtab();});
-document.querySelector("body").addEventListener('click', (event) => { 
+document.addEventListener('click', (event) => { 
    alert(event.target)
    if(event.target.getAttribute('type') != 'button' && event.target.getAttribute('class') != 'floating-box') {
       hideall();
