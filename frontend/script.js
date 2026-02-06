@@ -266,9 +266,8 @@ function addto(amnt) {
 
 document.addEventListener('DOMContentLoaded', () => {
     getTabs();});
-document.getElementById('passwordform').addEventListener('submit',l => {l.preventDefault();login();
-
+document.getElementById('passwordform').addEventListener('submit',l => {l.preventDefault();login();});
+document.getElementById('tabaddform').addEventListener('submit',l => {l.preventDefault();addtab();});
 document.querySelector("body").adEventListener('click', () => {alert('body has been clicked on')})
-});
 var autoupdate = setInterval(getTabs, 3000);
 alert("Notice: \n You're using a free plan for your deployment of hebcanteentabs. \n This will expire, and delete data, on March 5, 2026, unless upgraded.")
