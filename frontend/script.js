@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('passwordform').addEventListener('submit',l => {l.preventDefault();login();});
 document.getElementById('tabaddform').addEventListener('submit',l => {l.preventDefault();addtab();});
 document.querySelector("body").addEventListener('click', (event) => { 
-   if(event.getAttribute('type') != 'button' and event.getAttribute('class') != 'floating-box') {
+   if(event.getAttribute('type') != 'button' && event.getAttribute('class') != 'floating-box') {
       alert('body has been clicked on')
    }})
 var autoupdate = setInterval(getTabs, 3000);
