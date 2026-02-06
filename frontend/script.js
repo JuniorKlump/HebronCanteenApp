@@ -264,6 +264,7 @@ function addto(amnt) {
     initbuttons()
 }
 function hideall(){
+   alert("hideall works")
    lst = document.querySelectorAll("floating-box")
    lst.forEach(box => {box.style.display = "none"})
 }
@@ -273,7 +274,6 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('passwordform').addEventListener('submit',l => {l.preventDefault();login();});
 document.getElementById('tabaddform').addEventListener('submit',l => {l.preventDefault();addtab();});
 document.addEventListener('click', (event) => { 
-   alert(event.target)
    if(event.target.getAttribute('type') != 'button' && event.target.getAttribute('class') != 'floating-box') {
       hideall();
    }})
