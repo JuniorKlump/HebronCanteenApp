@@ -236,24 +236,26 @@ function edittab(id) {
       const lock = document.createElement("div");
       lock.className = "floating-box";
       lock.id = "tablock"
-      lock.textContent = `This tab is locked. Please ensure that the balance is greater than ${cap+tolerance} to continue using it.`
+      const textc = document.createElement("p");
+      textc.textContent = `This tab is locked. Please ensure that the balance is greater than ${cap+tolerance} to continue using it.`
       const btn = document.createElement("button");
       btn.textContent = "Ok"
-      btn.onClick = () =>{
+      btn.onclick = () =>{
       show("edit-popup")
       document.getElementById("tablock") = null
    }
-   lock.appendChild(btn);
-   document.querySelector("body").appendChild(lock)}
-   show("tablock")
+      lock.appendchild(textc)
+      lock.appendChild(btn);
+      document.querySelector("body").appendChild(lock)}
+      show("tablock")
    
     
-    document.getElementById('show-history').onclick=() => gethistory(editing)
-    credit = 0;
-    ebutton = document.getElementById(`${id}`)
-    document.getElementById("edit-heading").textContent = `Editing tab: ${ebutton.dataset.name}`
-    document.getElementById("balance").textContent = `Balance: ${ebutton.dataset.balance}`
-    addto(0);
+       document.getElementById('show-history').onclick=() => gethistory(editing)
+       credit = 0;
+       ebutton = document.getElementById(`${id}`)
+       document.getElementById("edit-heading").textContent = `Editing tab: ${ebutton.dataset.name}`
+       document.getElementById("balance").textContent = `Balance: ${ebutton.dataset.balance}`
+       addto(0);
 }
 function addto(amnt) {
     const toedit = document.getElementById(`${editing}`)
