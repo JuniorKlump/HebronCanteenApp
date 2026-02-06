@@ -207,7 +207,7 @@ function initbuttons() {
         sub.style.display = "inline";
         const toedit = document.getElementById(`${editing}`)
         const updated = parseInt(toedit.dataset.balance) + credit
-        if ((updated - amnt) < -2000) {
+        if ((updated - amnt) < - cap) {
             sub.style.color = "lightgrey"
             sub.style.backgroundColor = "grey"
             sub.style.border = "2px solid darkgrey"
@@ -227,7 +227,7 @@ function show(id) {
 }
 function edittab(id) {
    const balance = parseInt(document.getElementById(`${id}`).dataset.balance)
-   if(balance < (cap + tolerance)){
+   if(balance <= (cap + tolerance)){
       const alert = document.createElement("div");
    alert.class = "floating-box"
    alert.id = "tablock"
@@ -268,6 +268,6 @@ document.addEventListener('DOMContentLoaded', () => {
     getTabs();});
 document.getElementById('passwordform').addEventListener('submit',l => {l.preventDefault();login();});
 document.getElementById('tabaddform').addEventListener('submit',l => {l.preventDefault();addtab();});
-document.querySelector("body").adEventListener('click', () => {alert('body has been clicked on')})
+document.querySelector("body").addEventListener('click', () => {alert('body has been clicked on')})
 var autoupdate = setInterval(getTabs, 3000);
 alert("Notice: \n You're using a free plan for your deployment of hebcanteentabs. \n This will expire, and delete data, on March 5, 2026, unless upgraded.")
