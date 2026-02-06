@@ -230,7 +230,7 @@ function edittab(id) {
    const balance = parseInt(document.getElementById(`${id}`).dataset.balance)
    if(balance <= (cap + tolerance)){
    const lock = document.createElement("div");
-   lock.class = "floating-box"
+   lock.className = "floating-box"
    lock.id = "tablock"
    lock.textContent = `This tab is locked. Please ensure that the balance is greater than ${cap+tolerance} to continue using it.`
    const btn = document.createElement("button");
