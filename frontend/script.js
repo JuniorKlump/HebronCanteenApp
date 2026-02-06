@@ -207,7 +207,7 @@ function initbuttons() {
         sub.style.display = "inline";
         const toedit = document.getElementById(`${editing}`)
         const updated = parseInt(toedit.dataset.balance) + credit
-        if ((updated - amnt) < - cap) {
+        if ((updated - amnt) < tolerance + cap) {
             sub.style.color = "lightgrey"
             sub.style.backgroundColor = "grey"
             sub.style.border = "2px solid darkgrey"
@@ -228,18 +228,17 @@ function show(id) {
 function edittab(id) {
    const balance = parseInt(document.getElementById(`${id}`).dataset.balance)
    if(balance <= (cap + tolerance)){
-      const alert = document.createElement("div");
-   alert.class = "floating-box"
-   alert.id = "tablock"
-   alert.textContent = `This tab is locked. Please ensure that the balance is greater than ${cap+tolerance} to continue using it.`
+      const lock = document.createElement("div");
+   lock.class = "floating-box"
+   lock.id = "tablock"
+   lock.textContent = `This tab is locked. Please ensure that the balance is greater than ${cap+tolerance} to continue using it.`
    const btn = document.createElement("button");
    btn.textContent = "Ok"
    btn.onClick = () =>{
-      hide("tablock")
-      edit
+      document.getElementById("tablock") = null
    }
    alert.appendChild(btn);
-   document.querySelector("body").appendChild(alert)}
+   document.querySelector("body").appendChild(lock)}
    
     show("edit-popup");
     editing = id;
