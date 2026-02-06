@@ -227,7 +227,7 @@ function show(id) {
 }
 function edittab(id) {
    const balance = parseInt(document.getElementById(`${id}`).dataset.balance)
-   if(balance < (cap + tolerance){
+   if(balance < (cap + tolerance)){
       const alert = document.createElement("div");
    alert.class = "floating-box"
    alert.id = "tablock"
