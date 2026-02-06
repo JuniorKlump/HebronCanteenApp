@@ -228,11 +228,13 @@ function show(id) {
 }
 function edittab(id) {
    show("edit-popup")
+   initbuttons();
    const balance = parseInt(document.getElementById(`${id}`).dataset.balance)
    if(balance <= (cap + tolerance)){
       hide("edit-tab")
       const lock = document.createElement("div");
-      lock.className = "floating-box"
+      lock.className = "floating-box";
+      lock.style.display = "block";
       lock.id = "tablock"
       lock.textContent = `This tab is locked. Please ensure that the balance is greater than ${cap+tolerance} to continue using it.`
       const btn = document.createElement("button");
@@ -246,7 +248,6 @@ function edittab(id) {
    
     editing = id;
     document.getElementById('show-history').onclick=() => gethistory(editing)
-    initbuttons();
     credit = 0;
     ebutton = document.getElementById(`${id}`)
     document.getElementById("edit-heading").textContent = `Editing tab: ${ebutton.dataset.name}`
