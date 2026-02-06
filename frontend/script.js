@@ -232,7 +232,7 @@ function edittab(id) {
    initbuttons();
    const balance = parseInt(document.getElementById(`${id}`).dataset.balance)
    if(balance <= (cap + tolerance)){
-      hide("edit-tab")
+      hide("edit-popup")
       const lock = document.createElement("div");
       lock.className = "floating-box";
       lock.id = "tablock"
