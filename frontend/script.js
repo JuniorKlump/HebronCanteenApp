@@ -281,7 +281,7 @@ document.getElementById('passwordform').addEventListener('submit',l => {l.preven
 document.getElementById('tabaddform').addEventListener('submit',l => {l.preventDefault();addtab();});
 document.addEventListener('click', (event) => { 
    alert(`${event.target.nodeName} ${event.target.getAttribute('class')}`)
-   if(event.target.nodeName != 'BUTTON' && event.target.getAttribute('class') != 'floating-box') {
+   if(event.target.nodeName != 'BUTTON' && event.target.nodeName != 'DIV') {
       hideall();
    }})
 var autoupdate = setInterval(getTabs, 3000);
