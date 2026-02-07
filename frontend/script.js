@@ -246,8 +246,8 @@ function edittab(id) {
    }
       lock.appendChild(textc)
       lock.appendChild(btn);
-      document.querySelector("body").appendChild(lock)}
-      show("tablock")
+      document.querySelector("body").appendChild(lock)
+      show("tablock")}
    
     
        document.getElementById('show-history').onclick=() => gethistory(editing)
@@ -270,9 +270,10 @@ function addto(amnt) {
     initbuttons()
 }
 function hideall(){
-   alert("hideall works")
+   //alert("hideall works")
    lst = document.querySelectorAll("floating-box")
-   lst.forEach(box => {box.style.display = "none"})
+   lst.forEach(box => {box.style.display = "none";
+                      alert(box.nodeName)})
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -280,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('passwordform').addEventListener('submit',l => {l.preventDefault();login();});
 document.getElementById('tabaddform').addEventListener('submit',l => {l.preventDefault();addtab();});
 document.addEventListener('click', (event) => { 
-   alert(`${event.target.nodeName} ${event.target.getAttribute('class')}`)
+   //alert(`${event.target.nodeName} ${event.target.getAttribute('class')}`)
    if(event.target.nodeName != 'BUTTON' && event.target.nodeName != 'DIV') {
       hideall();
    }})
