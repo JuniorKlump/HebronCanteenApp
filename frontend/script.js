@@ -271,7 +271,7 @@ function addto(amnt) {
 }
 function hideall(){
    //alert("hideall works")
-   lst = document.querySelectorAll("floating-box")
+   const lst = document.querySelectorAll("floating-box");
    lst.forEach(box => {box.style.display = "none";
                       alert(box.nodeName)})
 }
