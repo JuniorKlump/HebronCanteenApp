@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('passwordform').addEventListener('submit',l => {l.preventDefault();login();});
 document.getElementById('tabaddform').addEventListener('submit',l => {l.preventDefault();addtab();});
 document.addEventListener('click', (event) => { 
-  // alert(`${event.target.nodeName} ${event.target.getAttribute('class')}`)
+   alert(`${event.target.nodeName} ${event.target.getAttribute('class')}`)
    if(event.target.nodeName != 'BUTTON' && event.target.getAttribute('class') != 'floating-box') {
       hideall();
    }})
