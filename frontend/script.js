@@ -272,9 +272,10 @@ function addto(amnt) {
 function hideall(){
    //alert("hideall works")
    const lst = document.querySelectorAll(".floating-box");
-   alert(lst);
+   //alert(lst);
    lst.forEach((box) => {box.style.display = "none";
-                      alert(`Hid box ${box.id}`)})
+                      //alert(`Hid box ${box.id}`)
+                        })
 }
 
 document.addEventListener('DOMContentLoaded', () => {
