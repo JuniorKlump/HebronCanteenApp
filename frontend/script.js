@@ -274,7 +274,7 @@ function hideall(){
    const lst = document.querySelectorAll(".floating-box");
    alert(lst);
    lst.forEach((box) => {box.style.display = "none";
-                      alert(`Hidden box` ${box.id})})
+                      alert(`Hid box ${box.id}`)})
 }
 
 document.addEventListener('DOMContentLoaded', () => {
