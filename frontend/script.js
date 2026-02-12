@@ -274,7 +274,7 @@ function hideall(){
    const lst = document.querySelectorAll("floating-box");
    alert(lst);
    lst.forEach((box) => {box.style.display = "none";
-                      alert(box.nodeName)})
+                      alert("hello")})
 }
 
 document.addEventListener('DOMContentLoaded', () => {
