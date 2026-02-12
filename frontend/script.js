@@ -273,7 +273,7 @@ function hideall(){
    //alert("hideall works")
    const lst = document.querySelectorAll("floating-box");
    alert(lst);
-   lst.forEach(function(box){box.style.display = "none";
+   lst.forEach((box) => {box.style.display = "none";
                       alert(box.nodeName)})
 }
 
