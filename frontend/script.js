@@ -44,10 +44,10 @@ function login() {
     document.cookie = `pw=${pword}`
 
 }
-async function getTabs() {
+async function getTabs(msg=false) {
     try {
         const tablist = document.getElementById("tablist")
-        tablist.innerHTML = "Fetching tabs..."
+        if(ms == true){tablist.innerHTML = "Fetching tabs..."}
         const data = await fetch(`${server}/get?p=${hash(pword)}`)
         if (data.status == 401 && pword != "") {
             document.getElementById("tablist").textContent = `Incorrect password. \n(If you've forgotten the password, click F12.)`
@@ -242,17 +242,17 @@ function initfilters(){
         filtBtn.style.width = "40px"
         if(filter.toLowerCase() == filtrnm){
             filtBtn.style.backgroundColor = "orange"
-            filtBtn.style.border = "rgb(130, 70, 0)"
+            filtBtn.style.border = "4px solid rgb(130, 70, 0)"
         }
         filtBtn.onclick = () => {
             if(filter.toLowerCase() == filtrnm){
                 filter = "all";
                 getTabs();
-                initfilters();
+                initfilters(msg=true);
             }else{
                 filter = filtrnm.toLowerCase();
                 getTabs();
-                initfilters();
+                initfilters(msg=true);
             }
         }
         cont.appendChild(filtBtn)
