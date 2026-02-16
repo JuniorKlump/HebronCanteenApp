@@ -7,7 +7,7 @@ const cap = -2200;
 const tolerance = 200;
 var filter = "all"
 const filters = []
-for(i=0;i<=26;i++){
+for(i=0;i<=25;i++){
    filters.push(String.fromCharCode(i+97))
 }
 
@@ -230,6 +230,26 @@ function initbuttons() {
 
     })
 };
+function initfilters(){
+    cont = document.querySelector("#filter-holder")
+    filters.forEach((filtrnm) => {
+        const filtBtn = document.createElement("button");
+        filtBtn.textContent = filtrnm
+        if(filter.toLowerCase() == filtrnm){
+            filtBtn.style.backgroundColor = "orange"
+        }
+        filtBtn.onclick = () => {
+            if(filter.toLowerCase() == filtrnm){
+                filter = "all";
+                getTabs();
+            }else{
+                filter = filtrnm.toLowerCase();
+                getTabs();
+            }
+        }
+        cont.appendChild(filtBtn)
+    })
+}
 function hide(id) {
     const toggle = document.getElementById(id);
     toggle.style.display = "none";
@@ -291,7 +311,8 @@ function hideall(){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    getTabs();});
+    getTabs();
+    initfilters();});
 document.getElementById('passwordform').addEventListener('submit',l => {l.preventDefault();login();});
 document.getElementById('tabaddform').addEventListener('submit',l => {l.preventDefault();addtab();});
 document.addEventListener('click', (event) => { 

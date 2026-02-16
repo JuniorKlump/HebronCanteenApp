@@ -123,7 +123,9 @@ p{
 #show-history{
     transform: translateX(-50%);
 }
-/*#show-history:hover{
-    background-color:darkblue;
-    border:2px solid blue;
-}*/
+#filter-holder{
+    position:fixed;
+    width: 10%;
+    height:80%;
+    display: flex;
+}
