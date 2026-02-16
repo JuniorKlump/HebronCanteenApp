@@ -240,8 +240,8 @@ function initfilters(){
         filtBtn.textContent = filtrnm
         filtBtn.className = "filter-buttons"
         if(filter.toLowerCase() == filtrnm){
-            filtBtn.style.backgroundColor = "orange"
-            filtBtn.style.border = "2px solid rgb(130, 70, 0)"
+            filtBtn.style.backgroundColor = "green";
+            filtBtn.style.border = "2px solid darkgreen"
         }
         filtBtn.onclick = () => {
             if(filter.toLowerCase() == filtrnm){

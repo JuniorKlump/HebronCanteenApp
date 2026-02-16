@@ -135,4 +135,5 @@ p{
     height: 40px;
     display: block;
     padding: 2px;
+    flex: none;
 }
