@@ -127,6 +127,6 @@ p{
     position:fixed;
     width: 10%;
     height:80%;
-    bottom: 0;
+    top: 100%;
     display: flex;
 }
