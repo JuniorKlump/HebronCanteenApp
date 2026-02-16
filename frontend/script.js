@@ -63,7 +63,7 @@ async function getTabs() {
             }
 
             tabs.forEach(tab => {
-               if(tab.name[0].toLowerCase() == filter.toLowerCase() or filter == "all"){
+               if(tab.name[0].toLowerCase() == filter.toLowerCase() || filter == "all"){
                 const newitem = document.createElement("button")
                 if (tab.balance >= 0) {
                     newitem.style.backgroundColor = "green";
