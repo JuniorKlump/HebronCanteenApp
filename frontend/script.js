@@ -46,6 +46,8 @@ function login() {
 }
 async function getTabs() {
     try {
+        const tablist = document.getElementById("tablist")
+        tablist.innerHTML = "Fetching tabs..."
         const data = await fetch(`${server}/get?p=${hash(pword)}`)
         if (data.status == 401 && pword != "") {
             document.getElementById("tablist").textContent = `Incorrect password. \n(If you've forgotten the password, click F12.)`
@@ -53,7 +55,7 @@ async function getTabs() {
         } else {
             const tabs = await data.json()
             const status = data.status
-            const tablist = document.getElementById("tablist")
+            
             tablist.innerHTML = ""
             hide("loginbox")
 
