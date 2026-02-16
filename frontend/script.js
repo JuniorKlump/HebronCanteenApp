@@ -324,8 +324,9 @@ document.getElementById('passwordform').addEventListener('submit',l => {l.preven
 document.getElementById('tabaddform').addEventListener('submit',l => {l.preventDefault();addtab();});
 document.addEventListener('click', (event) => { 
    //alert(`${event.target.nodeName} ${event.target.getAttribute('class')}`)
-   if((event.target.nodeName != 'BUTTON' && event.target.nodeName != 'DIV' )|| event.target.id != "tablist") {
+   if((event.target.className != "floating-box" )){//event.target.nodeName != 'BUTTON' && event.target.nodeName != 'DIV' )) {
       hideall();
-   }})
+   }
+})
 var autoupdate = setInterval(getTabs, 3000);
 alert("Notice: \n You're using a free plan for your deployment of hebcanteentabs. \n This will expire, and delete data, on March 5, 2026, unless upgraded.")
