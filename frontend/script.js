@@ -8,7 +8,7 @@ const tolerance = 200;
 var filter = "all"
 const filters = []
 for(i=0;i<=26;i++){
-   filters.push(String.fromCharCode(i+96))
+   filters.push(String.fromCharCode(i+97))
 }
 
 if (new Date().getMonth() == 3 && new Date().getDate() == 1) {
@@ -67,8 +67,14 @@ async function getTabs() {
             }
 
             tabs.forEach(tab => {
-               if(tab.name[0].toLowerCase() == filter.toLowerCase() || filter == "all"){
+               
                 const newitem = document.createElement("button")
+               if(tab.name[0].toLowerCase() == filter.toLowerCase() || filter == "all"){
+                  newitem.style.display = "block";
+               
+               }else{
+                  newitme.style.display = "none";
+               }
                 if (tab.balance >= 0) {
                     newitem.style.backgroundColor = "green";
                     newitem.style.border = "2px solid darkgreen"
@@ -92,7 +98,7 @@ async function getTabs() {
                     newitem.textContent = tab.name + ": " + tab.balance;
                 }
                 tablist.appendChild(newitem)
-            }});
+            });
             if(showBillGates != "true"){
             hide("1")}
             return status
