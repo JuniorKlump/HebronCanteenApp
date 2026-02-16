@@ -232,9 +232,11 @@ function initbuttons() {
 };
 function initfilters(){
     cont = document.querySelector("#filter-holder")
+    cont.innerHTML = ""
     filters.forEach((filtrnm) => {
         const filtBtn = document.createElement("button");
         filtBtn.textContent = filtrnm
+        filtBtn.style.height = "20px"
         if(filter.toLowerCase() == filtrnm){
             filtBtn.style.backgroundColor = "orange"
         }
@@ -242,9 +244,11 @@ function initfilters(){
             if(filter.toLowerCase() == filtrnm){
                 filter = "all";
                 getTabs();
+                initfilters();
             }else{
                 filter = filtrnm.toLowerCase();
                 getTabs();
+                initfilters();
             }
         }
         cont.appendChild(filtBtn)
