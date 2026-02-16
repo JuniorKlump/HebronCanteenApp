@@ -73,7 +73,7 @@ async function getTabs() {
                   newitem.style.display = "block";
                
                }else{
-                  newitme.style.display = "none";
+                  newitem.style.display = "none";
                }
                 if (tab.balance >= 0) {
                     newitem.style.backgroundColor = "green";
