@@ -16,9 +16,9 @@
     <h1 id="header">Canteen Tabs</h1>
     <div id="tablist">Loading...</div>
     <div class="floating-box" id="edit-popup">
-        <div id="main-container">
-            <div id="buttons"></div>
-            <div id="text-container">
+        <div id="main-container" class="subcontainer">
+            <div id="buttons" class="subcontainer"></div>
+            <div id="text-container" class="subcontainer">
                 <h2 class="popup-text" id="edit-heading">Loading...</h2>
                 <h3 class="popup-text" id="balance">
                 </h3>
@@ -27,7 +27,7 @@
                 <button id="show-history">History</button>
             </div>
         </div>
-        <div id="options-container">
+        <div id="options-container" class="subcontainer">
             <button class="options" id="delete" onclick="trydelete()">🗑️</button>
             <button class="options" id="popup-dismiss" onclick="hide('edit-popup')">Cancel</button>
             <button class="options" id="popup-confirm" onclick="updatetab()">Confirm</button>
@@ -43,7 +43,7 @@
     </div>
     <div class="floating-box" id="confirm-delete">
         <h4>Confirm delete?</h4>
-        <div style="display:flex;">
+        <div style="display:flex;" class="subcontainer">
             <button onclick="deletetab()">Yes</button>
             <button onclick="hide('confirm-delete')">No</button>
         </div>
@@ -53,7 +53,7 @@
             onclick="login()">Login</button>
     </div>
     <div class="floating-box" id="history-popup">
-        <div id="history-list"></div>
+        <div id="history-list" class="subcontainer"></div>
         <button onclick="hide('history-popup')">Close</button>
     </div>
     <script src="script.js?=700"></script>

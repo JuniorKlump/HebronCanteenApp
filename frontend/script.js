@@ -324,8 +324,9 @@ document.getElementById('passwordform').addEventListener('submit',l => {l.preven
 document.getElementById('tabaddform').addEventListener('submit',l => {l.preventDefault();addtab();});
 document.addEventListener('click', (event) => { 
    //alert(`${event.target.nodeName} ${event.target.getAttribute('class')}`)
-   if((event.target.className != "floating-box" && event.target.nodeName != "BUTTON")){//event.target.nodeName != 'BUTTON' && event.target.nodeName != 'DIV' )) {
-      hideall();
+   if((event.target.className != "floating-box" && event.target.className != "subcontainer" && event.target.nodeName != "BUTTON")){//event.target.nodeName != 'BUTTON' && event.target.nodeName != 'DIV' )) {
+      alert(event.target.className)
+    hideall();
    }
 })
 var autoupdate = setInterval(getTabs, 3000);
