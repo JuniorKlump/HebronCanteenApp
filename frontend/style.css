@@ -130,3 +130,8 @@ p{
     top: 90%;
     display: flex;
 }
+.filter-buttons{
+    width:40px;
+    height: 40px;
+    display: block;
+}
