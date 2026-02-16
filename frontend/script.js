@@ -5,6 +5,7 @@ var showBillGates = "False";
 const money = [1, 5, 10, 20, 50, 100, 200, 500];
 const cap = -2200;
 const tolerance = 200;
+const filter = "all"
 
 if (new Date().getMonth() == 3 && new Date().getDate() == 1) {
    showBillGates = "True"
@@ -62,6 +63,7 @@ async function getTabs() {
             }
 
             tabs.forEach(tab => {
+               if(tab.name[0].toLowerCase() == filter.toLowerCase() or filter == "all"){
                 const newitem = document.createElement("button")
                 if (tab.balance >= 0) {
                     newitem.style.backgroundColor = "green";
@@ -86,7 +88,7 @@ async function getTabs() {
                     newitem.textContent = tab.name + ": " + tab.balance;
                 }
                 tablist.appendChild(newitem)
-            });
+            }});
             if(showBillGates != "true"){
             hide("1")}
             return status
