@@ -236,9 +236,11 @@ function initfilters(){
     filters.forEach((filtrnm) => {
         const filtBtn = document.createElement("button");
         filtBtn.textContent = filtrnm
-        filtBtn.style.height = "20px"
+        filtBtn.style.height = "40px"
+        filtBtn.style.width = "40px"
         if(filter.toLowerCase() == filtrnm){
             filtBtn.style.backgroundColor = "orange"
+            filtBtn.style.border = "rgb(130, 70, 0)"
         }
         filtBtn.onclick = () => {
             if(filter.toLowerCase() == filtrnm){
