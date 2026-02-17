@@ -7,7 +7,7 @@
     <title>Frontend</title>
     <link rel="stylesheet" href="style.css?=777">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <!--Canteen app built and developed by Josiah Klumpenhouwer, with a little help from AI models Chatgpt 5 and Claude Sonnet 3.5-->
+    <!--Canteen app built and developed by Josiah Klumpenhouwer, with a little help from AI models Chatgpt 5 and Claude Sonnet 3.5. (specified where used.)-->
     <!--Thanks to the following people for their support in developing this: Ittidej, Ebenezer, Rachel, and Emmanuel-->
 </head>
 
@@ -36,9 +36,9 @@
     <button id="addtab" onclick="show('name-popup')">+</button>
     <div class="floating-box" id="name-popup">
         <h4>Enter new tab name</h4>
-        <input id="name-input" placeholder="eg. John Smith">
         <form id="tabaddform">
-        <button id="tab-adder" onclick="addtab()">Add</button>
+        <input id="name-input" placeholder="eg. Ebenezer">
+        <button id="tab-adder" type="submit">Add</button>
         </form>
     </div>
     <div class="floating-box" id="confirm-delete">
@@ -49,8 +49,11 @@
         </div>
     </div>
     <div class="floating-box" id="loginbox">
-        <h4>Enter password:</h4><form id="passwordform"><input id="password" type="password"></form><button id="submit-password"
-            onclick="login()">Login</button>
+        <h4>Enter password:</h4>
+        <form id="passwordform">
+            <input id="password" type="password">
+            <button type="submit" id="submit-password">Login</button>
+        </form>
     </div>
     <div class="floating-box" id="history-popup">
         <div id="history-list" class="subcontainer"></div>
