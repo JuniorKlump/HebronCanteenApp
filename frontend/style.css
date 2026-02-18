@@ -125,17 +125,21 @@ p{
 }
 #filter-holder{
     position:fixed;
-    height:80%;
-    top: 90%;
-    left:80px;
+    height:100%;
+    top:  40px;
+    left: 40px;
     display: flex;
+    flex-direction:column;
+    gap:1px;
+    flex-wrap:wrap;
 }
 .filter-buttons{
     max-width:30px;
-    height: 40px;
+    max-height: 30px;
+    min-width: 20px;
+    min-height: 20px;
     display: block;
     padding: 2px;
-    flex: none;
 }
 @media (max-width: 900px){
     .filter-buttons{
