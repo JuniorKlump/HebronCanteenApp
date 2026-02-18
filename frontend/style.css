@@ -137,3 +137,8 @@ p{
     padding: 2px;
     flex: none;
 }
+@media (max-width: 850px){
+    .filter-buttons{
+        display:none;
+    }
+}
