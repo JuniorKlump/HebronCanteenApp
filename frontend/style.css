@@ -135,10 +135,10 @@ p{
 }
 .filter-buttons{
     font-family:monospace;
-    max-width:30px;
-    max-height: 30px;
-    min-width: 20px;
-    min-height: 20px;
+    max-width:55px;
+    max-height: 55px;
+    min-width: 45px;
+    min-height: 45px;
     display: block;
     padding: 2px;
 }
