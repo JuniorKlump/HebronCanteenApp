@@ -125,19 +125,19 @@ p{
 }
 #filter-holder{
     position:fixed;
-    width: 10%;
     height:80%;
     top: 90%;
+    left:80px;
     display: flex;
 }
 .filter-buttons{
-    width:30px;
+    max-width:30px;
     height: 40px;
     display: block;
     padding: 2px;
     flex: none;
 }
-@media (max-width: 850px){
+@media (max-width: 900px){
     .filter-buttons{
         display:none;
     }
