@@ -134,6 +134,7 @@ p{
     flex-wrap:wrap;
 }
 .filter-buttons{
+    font-family:monospace;
     max-width:30px;
     max-height: 30px;
     min-width: 20px;
