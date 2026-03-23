@@ -330,4 +330,4 @@ document.addEventListener('click', (event) => {
    }
 })
 var autoupdate = setInterval(getTabs, 3000);
-alert("Notice: \n You're using a free plan for your deployment of hebcanteentabs. \n This will expire, and delete data, on March 5, 2026, unless upgraded.")
+alert("Notice: \n You're using a free plan for your deployment of hebcanteentabs. \n This will expire, and delete data, on April 22, 2026, unless upgraded.")
