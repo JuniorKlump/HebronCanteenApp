@@ -10,6 +10,7 @@ body{
 }
 
 button{
+    touch-action: manipulation;
     font-family:'Helvetica';
     position: relative;
     left: 50%;
