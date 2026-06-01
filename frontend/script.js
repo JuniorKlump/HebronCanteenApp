@@ -279,6 +279,17 @@ function edittab(id) {
     warn.id = "debt-warning"
     const textc = document.createElement("p");
     textc.textContent = `Low balance warning. \nPlease note that buttons stop working past ${cap}, and might not register a transaction.`
+    const btn = document.createElement('button');
+    btn.textContent = "Ok";
+    btn.onclick = () => {
+        show("edit-popup");
+        document.getElementById("debt-warning").remove();
+    }
+
+    warn.appendChild(textc);
+    warn.appendChild(btn)
+    document.querySelector("body").appendChild(warn)
+    show("warn")
    }
    if(balance <= (cap + tolerance)){
       hide("edit-popup")
