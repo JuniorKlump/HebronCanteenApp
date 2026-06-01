@@ -5,6 +5,7 @@ var showBillGates = "False";
 const money = [1, 5, 10, 20, 50, 100, 200, 500];
 const cap = -2200;
 const tolerance = 200;
+const warning = -1200
 var filter = "all"
 const filters = []
 for(i=0;i<=25;i++){
@@ -271,6 +272,14 @@ function edittab(id) {
    show("edit-popup")
    initbuttons();
    const balance = parseInt(document.getElementById(`${id}`).dataset.balance)
+   if(balance <= warning){
+    hide("edit-popup")
+    const warn = document.createElement("div");
+    warn.className = "floating-box";
+    warn.id = "debt-warning"
+    const textc = document.createElement("p");
+    textc.textContent = `Low balance warning. \nPlease note that buttons stop working past ${cap}, and might not register a transaction.`
+   }
    if(balance <= (cap + tolerance)){
       hide("edit-popup")
       const lock = document.createElement("div");
