@@ -289,7 +289,7 @@ function edittab(id) {
     warn.appendChild(textc);
     warn.appendChild(btn)
     document.querySelector("body").appendChild(warn)
-    show("warn")
+    show("debt-warning")
    }
    if(balance <= (cap + tolerance)){
       hide("edit-popup")
