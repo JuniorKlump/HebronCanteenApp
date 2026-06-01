@@ -34,10 +34,11 @@
         </div>
     </div>
     <button id="addtab" onclick="show('name-popup')">+</button>
+    <button id="help" conclick="show('help-container')">?</button>
     <div class="floating-box" id="name-popup">
         <h4>Enter new tab name</h4>
         <form id="tabaddform">
-        <input id="name-input" placeholder="eg. Ebenezer">
+        <input id="name-input" placeholder="eg. Jonathan D'Silva">
         <button id="tab-adder" type="submit">Add</button>
         </form>
     </div>
@@ -58,6 +59,15 @@
     <div class="floating-box" id="history-popup">
         <div id="history-list" class="subcontainer"></div>
         <button onclick="hide('history-popup')">Close</button>
+    </div>
+    <div> class="floating-box" id="help-container">
+        <p>I've tried to design the system to be as intuitive as possible, 
+            so if you have any concerns, you can email me at jr.klump@proton.me.
+            The idea with the system is that adding money to a tab acts as 'adding debt' to that tab, 
+            and subtracting is paying off the debt, or adding positive credit to the account.
+            (I changed it from how I originally had it, since people seemed to naturally use it this way.)
+        </p>
+        <button onclick="hide('help-container')">Close</button>
     </div>
     <script src="script.js?=700"></script>
 </body>

@@ -76,6 +76,14 @@ button{
     height: 40px;
     display:none;
 }
+#help{
+    position:fixed;
+    left: 95%;
+    top: 5%;
+    width: 25px;
+    height:25px;
+    display:none;
+}
 #confirm-delete{
     display: none;
 }

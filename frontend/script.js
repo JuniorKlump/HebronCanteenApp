@@ -66,6 +66,7 @@ async function getTabs(msg=false) {
             else if (data.status == 200) {
                 readonly = "False";
                show("addtab")
+               show("help")
             }
 
             tabs.forEach(tab => {
