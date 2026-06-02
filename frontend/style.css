@@ -80,8 +80,8 @@ button{
     position:fixed;
     left: 95%;
     top: 5%;
-    width: 25px;
-    height:25px;
+    width: 30px;
+    height:30px;
     display:none;
 }
 #confirm-delete{

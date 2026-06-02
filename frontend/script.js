@@ -211,14 +211,14 @@ function initbuttons() {
         subcont.style.display = "flex";
         const add = document.createElement("button")
         add.textContent = `+${amnt}`
-        add.className = "add"
+        add.className = "sub"
         add.id = `-${amnt}`
         add.onclick = () => addto(-amnt)
         add.style.display = "inline";
         subcont.appendChild(add)
         const sub = document.createElement("button")
         sub.textContent = `-${amnt}`
-        sub.className = "sub"
+        sub.className = "add"
         sub.id = `${amnt}`
         sub.onclick = () => addto(amnt)
         sub.style.display = "inline";
@@ -272,8 +272,27 @@ function edittab(id) {
    show("edit-popup")
    initbuttons();
    const balance = parseInt(document.getElementById(`${id}`).dataset.balance)
-   if(balance <= warning){
-    hide("edit-popup")
+   
+   if(balance <= (cap + tolerance)){
+      hide("edit-popup")
+      const lock = document.createElement("div");
+      lock.className = "floating-box";
+      lock.id = "tablock"
+      const textc = document.createElement("p");
+      textc.textContent = `This tab is locked. Please ensure that the balance is greater than ${cap+tolerance} to continue using it.`
+      const btn = document.createElement("button");
+      btn.textContent = "Ok"
+      btn.onclick = () =>{
+      show("edit-popup")
+      document.getElementById("tablock").remove()
+   }
+      lock.appendChild(textc)
+      lock.appendChild(btn);
+      document.querySelector("body").appendChild(lock)
+      show("tablock")
+    }else{if(balance <= warning){
+
+    hide("edit-popup");
     const warn = document.createElement("div");
     warn.className = "floating-box";
     warn.id = "debt-warning"
@@ -291,23 +310,7 @@ function edittab(id) {
     document.querySelector("body").appendChild(warn)
     show("debt-warning")
    }
-   if(balance <= (cap + tolerance)){
-      hide("edit-popup")
-      const lock = document.createElement("div");
-      lock.className = "floating-box";
-      lock.id = "tablock"
-      const textc = document.createElement("p");
-      textc.textContent = `This tab is locked. Please ensure that the balance is greater than ${cap+tolerance} to continue using it.`
-      const btn = document.createElement("button");
-      btn.textContent = "Ok"
-      btn.onclick = () =>{
-      show("edit-popup")
-      document.getElementById("tablock").remove()
-   }
-      lock.appendChild(textc)
-      lock.appendChild(btn);
-      document.querySelector("body").appendChild(lock)
-      show("tablock")}
+      }
    
     
        document.getElementById('show-history').onclick=() => gethistory(editing)
