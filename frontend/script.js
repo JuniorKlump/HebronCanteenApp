@@ -212,15 +212,15 @@ function initbuttons() {
         const add = document.createElement("button")
         add.textContent = `-${amnt}`
         add.className = "add"
-        add.id = `+${amnt}`
-        add.onclick = () => addto(amnt)
+        add.id = `-${amnt}`
+        add.onclick = () => addto(-amnt)
         add.style.display = "inline";
         subcont.appendChild(add)
         const sub = document.createElement("button")
         sub.textContent = `+${amnt}`
         sub.className = "sub"
         sub.id = `${amnt}`
-        sub.onclick = () => addto(-amnt)
+        sub.onclick = () => addto(amnt)
         sub.style.display = "inline";
         const toedit = document.getElementById(`${editing}`)
         const updated = parseInt(toedit.dataset.balance) + credit
