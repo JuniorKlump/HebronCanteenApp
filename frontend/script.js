@@ -210,14 +210,14 @@ function initbuttons() {
         subcont.id = `${amnt}`
         subcont.style.display = "flex";
         const add = document.createElement("button")
-        add.textContent = `-${amnt}`
+        add.textContent = `+${amnt}`
         add.className = "add"
         add.id = `-${amnt}`
         add.onclick = () => addto(-amnt)
         add.style.display = "inline";
         subcont.appendChild(add)
         const sub = document.createElement("button")
-        sub.textContent = `+${amnt}`
+        sub.textContent = `-${amnt}`
         sub.className = "sub"
         sub.id = `${amnt}`
         sub.onclick = () => addto(amnt)
@@ -326,7 +326,7 @@ function addto(amnt) {
     }
     const updated = balance + credit
     document.getElementById("updated-balance").textContent = `New Balance: ${updated}`
-    document.getElementById("credit").textContent = `Amount: ${credit}`
+    document.getElementById("credit").textContent = `Change: ${credit}`
     initbuttons()
 }
 function hideall(){
