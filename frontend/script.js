@@ -225,9 +225,9 @@ function initbuttons() {
         const toedit = document.getElementById(`${editing}`)
         const updated = parseInt(toedit.dataset.balance) + credit
         if ((updated - amnt) <= cap) {
-            sub.style.color = "lightgrey"
-            sub.style.backgroundColor = "grey"
-            sub.style.border = "2px solid darkgrey"
+            add.style.color = "lightgrey"
+            add.style.backgroundColor = "grey"
+            add.style.border = "2px solid darkgrey"
         }
         subcont.appendChild(sub)
         container.appendChild(subcont)
